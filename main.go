@@ -32,12 +32,14 @@ func main() {
 			zipCode: 17882,
 		},
 	}
-
-	// fmt.Printf("%+v", jim)
-	jimPointer := &jim
-	jimPointer.updateName("Jimmy")
+	// jimPointer := &jim
+	// jimPointer.updateName("Jimmy")
+	jim.updateName("Jimmy")
 	jim.print()
 
+	mySlice := []string{"hi", "there", "how", "are", "you"}
+	updateSlice(mySlice)
+	fmt.Println(mySlice)
 }
 
 func (pointerToPerson *person) updateName(newFirstName string) {
@@ -47,4 +49,7 @@ func (pointerToPerson *person) updateName(newFirstName string) {
 //this function take the person receiver
 func (p person) print() {
 	fmt.Printf("%+v", p)
+}
+func updateSlice(s []string) {
+	s[0] = "bye"
 }
